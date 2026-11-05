@@ -1,1 +1,4 @@
-The system-architecture.svg is a documentation diagram derived from the package and launch structure in this repository. It is not a photograph or an independently validated runtime visualization.
+# Project assets
+
+- `mobile-manipulator-hardware.jpeg` — actual mobile manipulator hardware photograph supplied by the project maintainer.
+- `system-architecture.svg` — high-level ROS 2 mobile manipulator architecture diagram.

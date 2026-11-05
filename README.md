@@ -16,6 +16,14 @@ A ROS 2 Humble workspace integrating an Edubot/Sherpa-style differential-drive m
 
 The core integration joins the mobile base and the ME6 manipulator into one Xacro robot description. The arm is attached to the mobile chassis through a fixed mounting link/joint. The workspace includes the base geometry and sensor frames, ME6 arm kinematic description, MoveIt planning configuration, Gazebo simulation control interfaces, and Nav2/SLAM configuration for the mobile platform.
 
+### Mobile manipulator hardware
+
+![Mobile manipulator hardware platform](assets/mobile-manipulator-hardware.jpeg)
+
+*Actual project hardware photograph supplied by the maintainer, showing the mobile base with a mounted robotic arm.*
+
+**Project demonstration:** [View the mobile manipulator project post/video on LinkedIn](https://lnkd.in/p/gJNzhaUf).
+
 ![System architecture](assets/system-architecture.svg)
 
 ## Main capabilities represented in this workspace
@@ -39,6 +47,7 @@ ros2-autonomous-mobile-manipulator/
 ├── dobot-dependencies.repos
 ├── .gitignore
 ├── assets/
+│   ├── mobile-manipulator-hardware.jpeg
 │   └── system-architecture.svg
 ├── docs/
 │   ├── ARCHITECTURE.md
