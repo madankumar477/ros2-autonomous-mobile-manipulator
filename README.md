@@ -8,7 +8,8 @@ A ROS 2 Humble workspace integrating an Edubot/Sherpa-style differential-drive m
 **Arm:** DOBOT ME6  
 **Simulation:** Gazebo Sim (`ros_gz`) and `ros2_control`  
 **Motion planning:** MoveIt 2  
-**Mobile navigation configuration:** SLAM Toolbox and Nav2
+**Mobile navigation configuration:** SLAM Toolbox and Nav2  
+**Status:** developed in simulation, then tested on the physical mobile base with the ME6 arm mounted
 
 > This repository is a cleaned source snapshot of the uploaded workspace. Generated `build/`, `install/`, and `log/` folders, stale backups, duplicate standalone ME6 configurations, saved SLAM `.data` / `.posegraph` files, and unrelated Gazebo model assets have been excluded. The project source packages are retained under `src/`.
 
@@ -23,6 +24,12 @@ The core integration joins the mobile base and the ME6 manipulator into one Xacr
 *Actual project hardware photograph supplied by the maintainer, showing the mobile base with a mounted robotic arm.*
 
 **Project demonstration:** [View the mobile manipulator project post/video on LinkedIn](https://lnkd.in/p/gJNzhaUf).
+
+### Hardware testing
+
+The system was first developed and checked in Gazebo, then tested by the maintainer on the physical platform shown above: the differential-drive mobile base with the DOBOT ME6 arm mounted on it. The LinkedIn post above shows the hardware demonstration.
+
+This repository is a cleaned snapshot of the workspace. The robot-specific hardware driver configuration used for the physical arm is not included here, so the checked-in MoveIt configuration still uses a mock hardware interface (see *Scope and limitations*).
 
 ![System architecture](assets/system-architecture.svg)
 
@@ -131,8 +138,8 @@ This launch composes the simulation, localization and navigation workflows using
 
 - This source snapshot contains the combined mobile-base + ME6 model, simulation/control configuration, MoveIt configuration and mobile navigation/SLAM configurations.
 - It does not contain a project-specific object-detection, autonomous grasp-selection or task-level pick-and-place application.
-- The ME6 MoveIt configuration uses a mock hardware interface. Physical ME6 execution requires an appropriately configured DOBOT hardware driver/controller path and safety checks on the real robot.
-- The project archive contains a historical TF tree showing the base/chassis and ME6 joint chain, but also contains separate TF/URDF error diagnostics. Do not infer stable end-to-end hardware validation from the TF snapshot alone.
+- The checked-in ME6 MoveIt configuration uses a mock hardware interface. The hardware driver setup used during physical testing is not part of this snapshot; to run the real arm, configure the DOBOT hardware driver/controller path and perform safety checks on the robot.
+- The project archive contains a historical TF tree showing the base/chassis and ME6 joint chain, along with separate TF/URDF error diagnostics from earlier development runs (see [Validation Notes](docs/VALIDATION_NOTES.md)).
 - The `hall1demo.world` warehouse assets are sourced from AWS RoboMaker's small warehouse world; see [third-party notices](THIRD_PARTY_NOTICES.md).
 - Some package manifests in the supplied workspace had `TODO` license fields. Original maintainer/license metadata was preserved rather than silently reassigned. See [license status](LICENSE_STATUS.md).
 

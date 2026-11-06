@@ -1,6 +1,8 @@
 # Validation Notes and Known Issues
 
-This document records facts observed in the uploaded `mobile_manipulator_ws.zip`. It is not a claim that the curated repository has been rebuilt and hardware-tested from a clean environment.
+This document records facts observed in the uploaded `mobile_manipulator_ws.zip`.
+
+The original project was tested by the maintainer on the physical mobile base with the ME6 arm mounted. The checks below refer to this curated snapshot, which has not yet been rebuilt and re-run from a clean environment.
 
 ## What the archive contains as evidence
 
